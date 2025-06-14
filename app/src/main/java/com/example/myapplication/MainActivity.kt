@@ -4,6 +4,7 @@ import android.content.Intent
 import android.os.Bundle
 import android.widget.Button
 import android.widget.EditText
+import android.widget.TextView
 import android.widget.Toast
 import androidx.activity.ComponentActivity
 import androidx.activity.compose.setContent
@@ -31,6 +32,16 @@ class MainActivity : ComponentActivity() {
         var txtUsuario = findViewById<EditText>(R.id.txtUsuario)
         var txtClave = findViewById<EditText>(R.id.txtClave)
         var btnLogin = findViewById<Button>(R.id.btnLogin)
+        var lblCreate = findViewById<TextView>(R.id.lblCreate)
+        var lblRecovery = findViewById<TextView>(R.id.lblRecovery)
+
+        lblCreate.setOnClickListener{
+            Toast.makeText(applicationContext, "Crear Cuenta", Toast.LENGTH_LONG).show()
+        }
+
+        lblRecovery.setOnClickListener{
+            Toast.makeText(applicationContext, "Recuperar Clave", Toast.LENGTH_LONG).show()
+        }
 
         btnLogin.setOnClickListener {
             val url = "http://10.0.2.2:8000/person.php?op=login"

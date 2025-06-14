@@ -43,6 +43,18 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
+    <EditText
+        android:id="@+id/txtPassword2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="140dp"
+        android:layout_marginTop="396dp"
+        android:ems="10"
+        android:inputType="text"
+        android:text=""
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
     <TextView
         android:id="@+id/lblApellido"
         android:layout_width="wrap_content"
@@ -74,6 +86,18 @@
         android:layout_marginStart="48dp"
         android:layout_marginTop="340dp"
         android:text="Clave:"
+        android:textColor="@color/black"
+        android:textSize="18sp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/lblPassword2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="4dp"
+        android:layout_marginTop="416dp"
+        android:text="Confirmar Clave:"
         android:textColor="@color/black"
         android:textSize="18sp"
         app:layout_constraintStart_toStartOf="parent"
@@ -119,8 +143,8 @@
         android:id="@+id/btnSave"
         android:layout_width="292dp"
         android:layout_height="37dp"
-        android:layout_marginStart="48dp"
-        android:layout_marginTop="412dp"
+        android:layout_marginStart="56dp"
+        android:layout_marginTop="516dp"
         android:text="Guardar"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
@@ -129,8 +153,8 @@
         android:id="@+id/btnCancel"
         android:layout_width="292dp"
         android:layout_height="37dp"
-        android:layout_marginStart="48dp"
-        android:layout_marginTop="480dp"
+        android:layout_marginStart="56dp"
+        android:layout_marginTop="584dp"
         android:text="Cancelar"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
