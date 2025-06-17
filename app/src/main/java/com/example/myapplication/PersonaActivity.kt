@@ -22,9 +22,19 @@ class PersonaActivity : ComponentActivity() {
         btnPerfil.setOnClickListener {
             val fp = Intent(this, PerfilActivity::class.java)
             fp.putExtra("codigo", codPersona)
+            fp.putExtra("nombre", namePersona)
             startActivity(fp)
         }
 
+        btnContact.setOnClickListener {
+            val fp = Intent(this, ContactoActivity::class.java)
+            fp.putExtra("codigo", codPersona)
+            fp.putExtra("nombre", namePersona)
+            startActivity(fp)
+        }
 
+        btnExit.setOnClickListener{
+
+        }
     }
     }

@@ -22,10 +22,12 @@ class PerfilActivity : ComponentActivity() {
     lateinit var txtEmail:EditText
     lateinit var txtPassword:EditText
     lateinit var txtPassword2:EditText
+    lateinit var codNombre: String
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.perfil)
         val codPersona = intent.getStringExtra("codigo")
+        val codNombre = intent.getStringExtra("nombre")
         consulData(codPersona.toString())
         txtName = findViewById(R.id.txtName)
         txtLastname = findViewById(R.id.txtLastname)
@@ -38,6 +40,8 @@ class PerfilActivity : ComponentActivity() {
 
         btnCancel.setOnClickListener{
             val fp = Intent(this, PersonaActivity::class.java)
+            fp.putExtra("codigo", codPersona)
+            fp.putExtra("nombre", codNombre)
             startActivity(fp)
         }
         btnSave.setOnClickListener{
@@ -71,7 +75,7 @@ class PerfilActivity : ComponentActivity() {
                             ).show()
                             val fp = Intent(this, PersonaActivity::class.java)
                             fp.putExtra("codigo", codigo)
-                            fp.putExtra("nombre", txtName.text.toString())
+                            fp.putExtra("nombre",codNombre)
                             startActivity(fp)
                         } else {
                             Toast.makeText(
