@@ -1,7 +1,9 @@
 package com.example.myapplication
 
+import android.content.Intent
 import android.os.Bundle
 import android.widget.ArrayAdapter
+import android.widget.Button
 import android.widget.ListView
 import android.widget.Toast
 import androidx.activity.ComponentActivity
@@ -21,13 +23,27 @@ class ContactoActivity : ComponentActivity() {
         setContentView(R.layout.contacto)
         var cod_persona = intent.getStringExtra("codigo")
         var nom_persona = intent.getStringExtra("nombre")
+        var btnContact = findViewById<Button>(R.id.btnNuevo)
+
+
+        btnContact.setOnClickListener {
+            val fp = Intent(this, NuevoActivity::class.java)
+            fp.putExtra("codigo", cod_persona)
+            fp.putExtra("nombre", nom_persona)
+            startActivity(fp)
+        }
         lista = findViewById(R.id.list)
         lista.setOnItemClickListener {adapterView, view , i, l ->
-            Toast.makeText(applicationContext, codigos.get(i), Toast.LENGTH_LONG).show()
-            deleteContacto(codigos.get(i).toString())
+            val fp = Intent(this, NuevoActivity::class.java)
+            fp.putExtra("codigo", cod_persona)
+            fp.putExtra("nombre", nom_persona)
+            fp.putExtra("contacto", codigos.get(i).toString())
+            startActivity(fp)
         }
         consult(cod_persona.toString())
     }
+
+
 
     private fun consult(codigo: String) {
         val al =  ArrayList<String>()
@@ -77,8 +93,6 @@ class ContactoActivity : ComponentActivity() {
         rq.add(js)
     }
 
-    private fun deleteContacto(codigoContacto: String) {
 
-    }
 
 }
